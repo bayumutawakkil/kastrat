@@ -125,8 +125,8 @@ export default function SoundCloudPlayer() {
         </div>
       )}
       
-      {/* Hidden ReactPlayer for audio control */}
-      <div className="hidden">
+      {/* Keep the player mounted so the SoundCloud iframe can initialize. */}
+      <div className="absolute h-px w-px overflow-hidden opacity-0 pointer-events-none" aria-hidden="true">
         <ReactPlayer
           ref={playerRef}
           url={playlistUrl}
